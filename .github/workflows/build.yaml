@@ -35,10 +35,10 @@ jobs:
       #   run: flutter build ios --releasee --no-codesign
 
       - name: Set permissions
-        run: chmod +x gradlew
+        run: cd android && chmod +x gradlew
 
       - name: Build android apk
-        run: cd android && ./gradlew assembleRelease
+        run: ./gradlew assembleRelease
 
       - run: ls app/build/outputs/apk/release
 
