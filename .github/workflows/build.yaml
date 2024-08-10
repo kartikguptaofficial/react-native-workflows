@@ -40,7 +40,7 @@ jobs:
       - name: Build android apk
         run: cd android && ./gradlew assembleRelease
 
-      - run: ls app/build/outputs/apk/release
+      - run: ls android/app/build/outputs/apk/release
 
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
@@ -48,4 +48,4 @@ jobs:
           appId: ${{secrets.APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
           groups: devx
-          file: app/build/outputs/apk/release/app-release.apk
+          file: android/app/build/outputs/apk/release/app-release.apk
